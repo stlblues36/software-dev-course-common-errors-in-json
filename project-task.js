@@ -44,10 +44,10 @@ but it contains multiple syntax errors that prevent it from being parsed.
 // 🔍 Provided JSON File with Errors
 // ============================================
 
-const invalidBookingJSON = `
+const jsonString =//changed to jsonString for json
 {
   "hotelName": "Grand City Hotel",
-  "checkInDate": "2024-05-15"
+  "checkInDate": "2024-05-15",//missing comma
   "checkOutDate": "2024-05-20",
   "guests": [
     {
@@ -57,8 +57,8 @@ const invalidBookingJSON = `
     },
     {
       "name": "Bob Smith",
-      "age": undefined,
-      "email": "bob.smith@example"
+      "age": null,//incorrect data type (undefined instead of null)
+      "email": "bob.smith@example.com"//incorrect email format
     }
   ],
   "roomDetails": {
@@ -67,7 +67,7 @@ const invalidBookingJSON = `
     "amenities": ["WiFi", "Breakfast", "Parking",]
   }
 }
-`;
+;//removed back tick for jsonString
 
 
 // ============================================
@@ -91,11 +91,11 @@ const invalidBookingJSON = `
 💬 Reflect and answer the following:
 
 1️⃣ What tools or techniques did you use to identify the errors?
-
+I used what I learned first and then used jsonlint to double check
 2️⃣ How did you confirm that your corrected JSON file was valid?
-
+I used jsonlint and looked for red
 3️⃣ Which errors were the most difficult to spot? Why?
-
+I had trouble with the initial const because even when I fixed it jsonlint didnt like it
 4️⃣ What strategies can help you avoid these kinds of errors in the future?
-   (e.g., syntax highlighting, linters, writing JSON by example)
+   (e.g., syntax highlighting, linters, writing JSON by example) practice and use jsonlint to chatch the rest
 */
